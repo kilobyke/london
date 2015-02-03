@@ -3,6 +3,13 @@ import os.path
 from flask import Flask, request, make_response
 import plivo
 app = Flask(__name__)
+app = debug = True
+
+# Use the url which heroku gives you after deploying
+base_url = 'http://quiet-lake-9590.herokuapp.com/'
+ 
+auth_id = 'SAYTAWOTKYZGJKMWI4ZW'
+auth_token = 'MWQ0NzYyNzExN2FhZTM4OWM5NDExNjgwYjQzMjFh'
 
 @app.route('/response/sip/route/', methods=['GET', 'POST'])
 def sip_route():
